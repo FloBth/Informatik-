@@ -21,7 +21,7 @@ public class KaraWorld extends World {
 	 * The file from which the world setup is loaded <br>
 	 * <i>Die Textdatei, von welcher die Welt geladen wird.</i>
 	 */
-	public static final String WORLD_SETUP_FILE = "WorldSetup.txt";
+	public static final String WORLD_SETUP_FILE = "kara ex7.txt";
 	
 	// Size of one cell
 	public static final int CELL_SIZE = 28; 
@@ -159,18 +159,21 @@ public class KaraWorld extends World {
 		setBackground((GreenfootImage) null);
 	}
 
-	/**
-	 * Prepares the world, i.e. creates all initial actors. If a world setup is
-	 * available, it is loaded.
-	 * <p>
-	 * This method may be overridden by subclasses to provide their own means to
-	 * initialize actors, e.g. by calling {@link #addObject()}.
-	 */
-	protected void prepare() {
-		if (worldSetup != null) {
-			initActorsFromWorldSetup(worldSetup);
-		}
-	}
+    /**
+     * Prepares the world, i.e. creates all initial actors. If a world setup is
+     * available, it is loaded.
+     * <p>
+     * This method may be overridden by subclasses to provide their own means to
+     * initialize actors, e.g. by calling {@link #addObject()}.
+     */
+    protected void prepare() {
+        if (worldSetup != null) {
+            initActorsFromWorldSetup(worldSetup);
+        }
+
+        Leaf leaf = new Leaf();
+        addObject(leaf,8,4);
+    }
 	
 	/**
 	 * Initializes the actors based on actor information in the specified
