@@ -23,6 +23,10 @@ public class MyKara extends Kara {
 		}
 	}
 
+	public void Aufgabe 9() {
+	
+	    
+	{
 	public void goAroundTree() {
 		turnLeft();
 		move();
